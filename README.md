@@ -39,6 +39,13 @@ Quickstart
    git push heroku master
        ```
 
+1. Add your Tumblr custom domain as a [domain in Heroku](https://devcenter.heroku.com/articles/custom-domains):
+
+       ```
+    heroku domains:add blog.example.com
+       ```
+
+
 1. Visit your Heroku app and make sure it is redirecting to the correct place
 
        All paths in this format:
@@ -52,7 +59,7 @@ Quickstart
        to one of your blog posts on Tumblr, like /post/123456/slug, then:
 
        ```
-   curl -I -H 'Host: your.blog.domain' http://your.herokuapp.com/post/123456/slug
+   curl -I -H 'Host: blog.example.com' http://your.herokuapp.com/post/123456/slug
        ```
 
        and make sure you get a 302 FOUND response with the Location header
